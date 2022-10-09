@@ -95,4 +95,7 @@ https://blog.csdn.net/qq_36287702/article/details/123604898
 
 https://huggingface.co/hfl/chinese-macbert-base
 
+## Statement
+The project is solely used for educational/recreational purposes only. It does not represent any political standpoint of the author. 
+
 
