@@ -90,6 +90,9 @@ This program relies on the same insight. Based on the classical BIO tagging for 
 2. Incorporating a double-verification system in the model; adding a sequential model that completes NER first then Sentiment Analsysis and combine the results with the current model to derive the final output
 3. Implementing customized loss functions to deal with padded tokens specially
 
+## Sources
+https://blog.csdn.net/qq_36287702/article/details/123604898
 
+https://huggingface.co/hfl/chinese-macbert-base
 
 
