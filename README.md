@@ -16,7 +16,7 @@ make sure to correctly install Nvidia Cuda for running tensorflow on GPU
 ## Files
 1. Bert-sent-analysis.h5 saves model weights/assets (not pushed to repo due to large size)
 2. quote_classifier.py uses the saved model to analyze sentences from quote.xlsx 
-3. quote_with_labels.xlsx/quote_with_labels_v2.xlsx are outputs from the previous script. They differ due to the data that they've been trained on
+3. quote_with_labels.xlsx/quote_with_labels_v2.xlsx are outputs from the previous script based on inputs from quote.xlsx. They differ due to the data that they've been trained on
 4. test_accuracy.py tests the model accuracy
 5. Bert_classifier.py builds the Bert-based model
 6. bert_chinese_model contains tensor_hub layer files (the preprocessor and the pre fine-tuned Bert model, also not pushed)
