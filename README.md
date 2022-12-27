@@ -79,12 +79,13 @@ To complete most NER tasks, the model is fine-tuned in a way that reads in a ser
 This program relies on the same insight. Based on the classical BIO tagging for NER related tasks, the idea was to combine sentiment analysis with NER tagging by assigning different labels to tokens according to their sentiment polarity. E.g. the sentence '我喜欢苹果但讨厌橙子'(meaning 'I like apples but hate oranges') will be labeled as 'O O O B-POS I-POS O B-NEG I-NEG', because the word 'apple' is clearly assigned with a positive sentiment and 'orange' the contrary. It is hoped that by exposing the model to training sets under such labeling mechanism, the model will pick up the entity and the emotion simultaneously. 
 
 ## pros
-1. high accuracy: 95.6% accuracy on the validation set for ABSA and 97.3% for entity only
+1. high accuracy: 95.6% accuracy on the validation set for ABSA and 97.3% for NER
 2. BERT take the context of the whole sentence into account
+3. Custom tokenizer keeps integral sentence structure from long input by only keeping important sentences(those that contain any of the entities) while retaining the same order. 
 ## cons
 1. expensive training time and memory usage
-2. Sometimes impossible labeling would appear (e.g. having an I label without a preceding B label, or having a padded token assuming a non O label)
-3. Works with much less accuracy for actual quotes, especially for ABSA.
+2. Sometimes nonsensical labeling would appear (e.g. having an I label without a preceding B label, or having a padded token with a non O label);this can be potentially fixed by adding a CRF layer
+3. Less accurate in reality than what's theorized especially for ABSA.
 ## Next Step
 1. A CRF layer can be added after the bert model to classify out the impossible cases
 2. Incorporating a double-verification system in the model; adding a sequential model that completes NER first then Sentiment Analsysis and combine the results with the current model to derive the final output
@@ -95,7 +96,5 @@ https://blog.csdn.net/qq_36287702/article/details/123604898
 
 https://huggingface.co/hfl/chinese-macbert-base
 
-## Statement
-The project is solely used for educational/recreational purposes only. It does not represent any political standpoint of the author. 
 
 
