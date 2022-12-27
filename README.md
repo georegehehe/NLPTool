@@ -51,9 +51,9 @@ https://tfhub.dev/tensorflow/bert_zh_preprocess/3
 
 https://tfhub.dev/tensorflow/bert_zh_L-12_H-768_A-12/4
 
-# Named Entity Recognition
+# Aspect Based Sentiment Analysis(ABSA)/Named Entity Recognition(NER)
 
-Using chinese_macbert_base model and its corresponding tokenizer to achieve both Named Entity Recognition on Chinese sentences and quasi Aspect Based Sentiment Analysis(ABSA).
+Using chinese_macbert_base model and its corresponding tokenizer to achieve both Named Entity Recognition on Chinese sentences and Aspect Based Sentiment Analysis(ABSA).
 
 ## Requirements
 
@@ -69,7 +69,7 @@ pip install scikit-learn
 make sure to correctly install Nvidia Cuda for running tensorflow on GPU
 
 ## Files
-1. absa.py trains the macbert-base model for NER tasks. Currently the code will output an ABSA model, but simple modifications allows the model to onnly focus on entity-recognition tasks
+1. absa.py trains the macbert-base model for NER tasks. Currently the code will output an ABSA model, but simple modifications allows the model to only focus on entity-recognition tasks
 2. quote_classifier_ner.py uses the saved model to analyze sentences from quote.xlsx 
 3. quote_with_labels_entity_only.xlsx/quote_with_labels_entity+emotion.xlsx are outputs from the previous script. The former only marks the entities within the sentences while the latter includes the sentiment of the entities.
 
